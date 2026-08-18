@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { apiFetch } from '@/lib/api-client';
+import { signOut } from '@/lib/auth/logout-client';
 
 interface Product {
   id: string;
@@ -66,7 +67,7 @@ export default function ProductsClient() {
           >
             + Add product
           </button>
-          <a href="/api/auth/logout" className="text-ink/60 hover:text-ink">Sign out</a>
+          <button onClick={signOut} className="text-ink/60 hover:text-ink">Sign out</button>
         </nav>
       </header>
 
