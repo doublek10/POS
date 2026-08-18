@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { apiFetch } from '@/lib/api-client';
+import { signOut } from '@/lib/auth/logout-client';
 
 interface Report {
   todaysSales: number;
@@ -30,7 +31,7 @@ export default function DashboardClient({ ownerName }: { ownerName: string }) {
           <a href="/products" className="text-ink/60 hover:text-ink">Products</a>
           <a href="/employees" className="text-ink/60 hover:text-ink">Employees</a>
           <a href="/pos" className="text-ink/60 hover:text-ink">POS</a>
-          <a href="/api/auth/logout" className="text-ink/60 hover:text-ink">Sign out</a>
+          <button onClick={signOut} className="text-ink/60 hover:text-ink">Sign out</button>
         </nav>
       </header>
 
