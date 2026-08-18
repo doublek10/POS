@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { apiFetch } from '@/lib/api-client';
+import { signOut } from '@/lib/auth/logout-client';
 import ReceiptPrint, { fetchReceiptData } from '@/components/receipts/ReceiptPrint';
 import { ReceiptData } from '@/lib/receipts/escpos';
 
@@ -219,7 +220,7 @@ export default function PosScreen({
             </div>
           )}
         </form>
-        <a href="/api/auth/logout" className="text-sm text-ink/50 hover:text-ink">Sign out</a>
+        <button onClick={signOut} className="text-sm text-ink/50 hover:text-ink">Sign out</button>
       </header>
 
       <div className="flex-1 flex overflow-hidden">
